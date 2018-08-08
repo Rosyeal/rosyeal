@@ -1,6 +1,6 @@
-# 1. entry, context
+# 1. entry
 # 2. output中的publicPath
-# 3. chunk, hashchunk
+# 3. hash, chunkhash
 # 4. hash
 # 5. hashmap
 # 6. compiler和compilation
@@ -31,7 +31,7 @@ webpack.optimize.CommonsChunkPlugin和entry中的vendor，CommonsChunkPlugin插�
 **提取模板(Extracting Boilerpalte)**,通过CommonsChunkPlugin
 ```javascript
 new webpack.optimize.CommonsChunkPlugin({
-	name: 'manifest'
+  name: 'manifest'
 })
 ```
 
@@ -51,19 +51,19 @@ CommonsChunkPlugin的‘vendor’实例，必须在‘manifest’实例之前引
 **细粒度shimming**，imports-loader
 ```javascript
 module: {
-	rules: [
-		{
-			test: requrire.resolve('index.js'),
-			use: 'imports-loader?this=>window'
-		}
-	]
+  rules: [
+    {
+      test: requrire.resolve('index.js'),
+      use: 'imports-loader?this=>window'
+    }
+  ]
 }
 ```
 **全局exports**
 ```javascript
 {
-	test: require.resolve('global.js'),
-	use: 'exports-loader?file,parse = helpers.parse'
+  test: require.resolve('global.js'),
+  use: 'exports-loader?file,parse = helpers.parse'
 }
 ```
 **polyfills**
@@ -107,7 +107,6 @@ chalk
 # 29. node常用api
 process.argv
 
-# 30. compiler, compilation
 # 31. fork-ts-checker-webpack-plugin
 # 32. resolve解析
 # 33. svgo-loader svg精简压缩工具
